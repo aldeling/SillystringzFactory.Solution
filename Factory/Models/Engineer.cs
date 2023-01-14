@@ -8,6 +8,6 @@ namespace Factory.Models
     public string EngineerName { get; set; }
     public string HireDate { get; set; }
     public string EngineerLicense { get; set; }
-    public List<EngineerMachines> JoinEntities { get; }
+    public List<EngineerMachine> JoinEntities { get; }
   }
 }
