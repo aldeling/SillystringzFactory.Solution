@@ -35,7 +35,7 @@ namespace Factory.Models
     [HttpPost]
     public ActionResult Create(Engineer engineer)
     {
-      _db.Machines.Add(engineer);
+      _db.Engineers.Add(engineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -48,7 +48,7 @@ namespace Factory.Models
     }
 
     [HttpPost]
-    public ActionResult AddMachine(Engineer engineer, int MachineId)
+    public ActionResult AddMachine(Engineer engineer, int machineId)
     {
       #nullable enable
       EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.MachineId == machineId && join.EngineerId == engineer.EngineerId));
@@ -70,7 +70,7 @@ namespace Factory.Models
     [HttpPost]
     public ActionResult Edit(Engineer engineer)
     {
-      _db.Machines.Update(engineer);
+      _db.Engineers.Update(engineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
