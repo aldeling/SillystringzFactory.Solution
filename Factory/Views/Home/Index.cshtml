@@ -2,7 +2,26 @@
  Layout = "_Layout";
 }
 
+@using Factory.Models
+
 <h1>Welcome Sillystringz Factory Managment</h1>
 
 <p>@Html.ActionLink("See all Engineers", "Index", "Engineers")</p>
+
+<hr/>
+
+@foreach (Engineer engineer in Model["engineers"])
+{
+  <li>@Html.ActionLink(@engineer.EngineerName, "Details", "Engineers", new { id = engineer.EngineerId })</li>
+}
+
+<hr/>
+
 <p>@Html.ActionLink("See all Machines", "Index", "Machines")</p>
+
+<hr/>
+
+@foreach (Machine machine in Model["machines"])
+{
+  <li>@Html.ActionLink(@machine.MachineName, "Deatils", "Machines", new {id = machine.MachineId })</li>
+}
